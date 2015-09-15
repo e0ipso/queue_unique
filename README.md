@@ -20,7 +20,7 @@ catch (\Drupal\queue_unique\Queue\SystemSetQueueException $e) {
 }
 ```
 
-# Usage
+## Usage
 In order for your queue to use the Queue Unique you need to set a variable:
 
 ```php
@@ -28,7 +28,7 @@ $queue_name = 'your_queue_name';
 variable_set('queue_class_' . $queue_name, '\\Drupal\\queue_unique\\Queue\\SystemSetQueue');
 ```
 
-# Queue UI integration
+## Queue UI integration
 To have your queues show up in the _Queue UI_, you will need to install _Queue UI_ with the following patches:
 
   * https://www.drupal.org/node/2428543
@@ -97,3 +97,6 @@ function _custom_module_batch_process($queue, &$context) {
   }
 }
 ```
+
+## Info
+This module differs from <a href="drupal.org/project/unique_queue">unique_queue</a> by the fact that _Queue Unique_ (this module) does not use a specific API to ensure uniqueness. You can switch your queue over to _Queue Unique_ by just setting the variable to the `\Drupal\queue_unique\Queue\SystemSetQueue` class.
