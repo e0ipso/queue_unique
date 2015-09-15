@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Module implementation file.
+ */
+
+// This module only provides a class that you can hook to your queue.
+// Set the variable:
+// variable_get('queue_class_' . $queue_name, '\\Drupal\\unique_queue\\Queue\\SystemSetQueue');
+
+/**
+ * Implements hook_queue_class_info().
+ */
+function unique_queue_queue_class_info() {
+  return array(
+    '\\Drupal\\unique_queue\\Queue\\SystemSetQueue' => array(
+      'title' => t('System Set Queue (database Queue with unique items)'),
+      'inspect' => TRUE,
+      'operations' => array(
+        'view',
+        'release',
+        'delete',
+        'deleteall',
+      ),
+    ),
+  );
+}
