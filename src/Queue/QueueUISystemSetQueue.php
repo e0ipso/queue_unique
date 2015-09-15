@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\unique_queue\Queue\QueueUISystemSetQueue
+ * Contains \Drupal\queue_unique\Queue\QueueUISystemSetQueue
  */
 
-namespace Drupal\unique_queue\Queue;
+namespace Drupal\queue_unique\Queue;
 
 class QueueUISystemSetQueue extends \QueueUISystemQueue implements \QueueUIInterface {
 

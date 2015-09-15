@@ -1,4 +1,4 @@
-name = Unique Queue
+name = Queue Unique
 description = Provides a DrupalQueue that only accepts unique items.
 core = 7.x
 

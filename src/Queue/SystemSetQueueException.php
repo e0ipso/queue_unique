@@ -2,9 +2,9 @@
 
 /**
  * @file
- * Contains \Drupal\unique_queue\Queue\SystemSetQueueException
+ * Contains \Drupal\queue_unique\Queue\SystemSetQueueException
  */
 
-namespace Drupal\unique_queue\Queue;
+namespace Drupal\queue_unique\Queue;
 
 class SystemSetQueueException extends \Exception {}

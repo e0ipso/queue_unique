@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\unique_queue\Queue\SystemSetQueue
+ * Contains \Drupal\queue_unique\Queue\SystemSetQueue
  */
 
-namespace Drupal\unique_queue\Queue;
+namespace Drupal\queue_unique\Queue;
 
 class SystemSetQueue implements \DrupalQueueInterface {
 
