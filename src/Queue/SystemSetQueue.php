@@ -43,7 +43,10 @@ class SystemSetQueue implements \DrupalQueueInterface {
       ));
     }
     catch (\PDOException $e) {
-      throw new SystemSetQueueException(sprintf('Attempted to insert a duplicated item. (%s).', $e->getMessage()));
+      // Do not alter the DrupalQueueInterface by throwing exceptions. If the
+      // item could not be inserted due to uniqueness issues, just fail silently
+      // and return FALSE as \DrupalQueueInterface expects.
+      return FALSE;
     }
   }
 

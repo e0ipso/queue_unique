@@ -1,5 +1,5 @@
 # Queue Unique
-Did you ever wanted a queue that only accepts unique items? This module provides a way of doing that. If you try to insert a duplicated item in the queue, an exception is thrown.
+Did you ever wanted a queue that only accepts unique items? This module provides a way of doing that. If you try to insert a duplicated item in the queue, the item is ignored.
 
 ```php
 // $data can be anything.
@@ -10,13 +10,9 @@ $queue = \DrupalQueue::get($queue_name);
 $queue->createQueue();
 // This puts the $data array in the queue the first time.
 $queue->createItem($data);
-try {
-  // This throws a \Drupal\queue_unique\Queue\SystemSetQueueException exception.
-  $queue->createItem($data);
-}
-catch (\Drupal\queue_unique\Queue\SystemSetQueueException $e) {
-  // The exception is caught, carry on.
-  // Don't do anything here if you want to just ignore duplicates.
+// This will insert a duplicate, and will return FALSE.
+if ($queue->createItem($data) === FALSE) {
+  // The item was a duplicate, respond appropriately.
 }
 ```
 
