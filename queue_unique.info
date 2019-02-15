@@ -1,7 +1,0 @@
-name = Queue Unique
-description = Provides a DrupalQueue that only accepts unique items.
-core = 7.x
-
-dependencies[] = registry_autoload
-
-registry_autoload[] = PSR-4
